@@ -8,39 +8,42 @@ using System.Linq.Expressions;
 
 System.Console.Write("Введите колличество элементов массива:");
 int M = Convert.ToInt32(Console.ReadLine());
-System.Console.Write("Введите строки:");
+System.Console.WriteLine("Введите строки:");
 string[] Array = new string [M];
 for (int i = 0; i < M; i++)
 {
-    System.Console.Write("Строка:"+i);
+    System.Console.WriteLine($"Строка {i+1}:");
     Array[i] = Console.ReadLine()+"";
 }
 NewArray(Array);
-PrintArray(Array);
-
 
 void NewArray (string[] Array)
 {
     int B=0;
     for (int i = 0; i < Array.Length; i++)
         {
-            if (Array[i].Length > 3)
+            if (Array[i].Length <= 3)
             B++;
         }
     string[] NewArray = new string [B];
-
+    B=0;
     for (int i = 0; i < Array.Length; i++)
         {
-            if (Array[i].Length > 3)
-            NewArray[i] = Array[i];
+            if (Array[i].Length <= 3)
+            {
+                NewArray[++B] = Array[i];
+                B++;
+            }
         }
+        PrintArray(NewArray);
 }
 
 void PrintArray(string[] Array)
 {   
+    System.Console.Write("[");
     for (int i = 0; i < Array.Length - 1; i++)
     {
         System.Console.Write($"'{Array[i]}', ");
     }
-    System.Console.WriteLine($"'{Array[Array.Length - 1]}' ]");
+    System.Console.WriteLine($"'{Array[Array.Length - 1]}']");
 }
