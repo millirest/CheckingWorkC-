@@ -4,8 +4,6 @@
  лучше обойтись исключительно массивами.
  */
 
-using System.Linq.Expressions;
-
 System.Console.Write("Введите колличество элементов массива:");
 int M = Convert.ToInt32(Console.ReadLine());
 System.Console.WriteLine("Введите строки:");
