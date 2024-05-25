@@ -15,7 +15,8 @@ for (int i = 0; i < M; i++)
     System.Console.Write("Строка:"+i);
     Array[i] = Console.ReadLine()+"";
 }
-
+NewArray(Array);
+PrintArray(Array);
 
 
 void NewArray (string[] Array)
@@ -33,4 +34,13 @@ void NewArray (string[] Array)
             if (Array[i].Length > 3)
             NewArray[i] = Array[i];
         }
+}
+
+void PrintArray(string[] Array)
+{   
+    for (int i = 0; i < Array.Length - 1; i++)
+    {
+        System.Console.Write($"'{Array[i]}', ");
+    }
+    System.Console.WriteLine($"'{Array[Array.Length - 1]}' ]");
 }
