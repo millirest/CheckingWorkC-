@@ -15,9 +15,10 @@ for (int i = 0; i < M; i++)
     System.Console.WriteLine($"Строка {i+1}:");
     Array[i] = Console.ReadLine()+"";
 }
+PrintArray(Array);
 NewArray(Array);
 
-void NewArray (string[] Array)
+void NewArray (string[] Array) // Создание и вывод массива
 {
     int B=0;
     for (int i = 0; i < Array.Length; i++)
@@ -31,14 +32,13 @@ void NewArray (string[] Array)
         {
             if (Array[i].Length <= 3)
             {
-                NewArray[B] = Array[i];
-                B++;
+                NewArray[B++] = Array[i];
             }
         }
         PrintArray(NewArray);
 }
 
-void PrintArray(string[] Array)
+void PrintArray(string[] Array) //Метод Вывода массива
 {   
     System.Console.Write("[");
     for (int i = 0; i < Array.Length - 1; i++)
