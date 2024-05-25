@@ -31,7 +31,7 @@ void NewArray (string[] Array)
         {
             if (Array[i].Length <= 3)
             {
-                NewArray[++B] = Array[i];
+                NewArray[B] = Array[i];
                 B++;
             }
         }
