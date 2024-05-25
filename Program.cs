@@ -38,10 +38,15 @@ void NewArray (string[] Array) // Создание и вывод массива
 
 void PrintArray(string[] Array) //Метод Вывода массива
 {   
+    if (Array.Length > 0)
+    {
     System.Console.Write("[");
     for (int i = 0; i < Array.Length - 1; i++)
     {
         System.Console.Write($"'{Array[i]}', ");
     }
     System.Console.WriteLine($"'{Array[Array.Length - 1]}']");
+    }
+    else
+      System.Console.Write("[]");
 }
